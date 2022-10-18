@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  * Implementation of the ext-authz service for Envoy.
- * See {@link <a href="https://github.com/envoyproxy/envoy/blob/main/api/envoy/service/auth/v3/external_auth.proto">Proto file</a>}
+ * @see <a href="https://github.com/envoyproxy/envoy/blob/main/api/envoy/service/auth/v3/external_auth.proto">...</a>
  */
 public class AuthorizationServiceImpl extends AuthorizationGrpc.AuthorizationImplBase {
     @Override

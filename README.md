@@ -11,7 +11,8 @@ Check my posts for a guide how to use it:
 1. [Using Istio as an external authorizer. Part 1: The theory](https://blog.dkwr.de/development/istio-as-authorization-part-1/)
 2. [Using Istio as an external authorizer. Part 2: The implementation
    ](https://blog.dkwr.de/development/istio-as-authorization-part-2/)
-3. [A Java implementation of the ext-authz filter for Envoy (... and Istio)]()
+3. [Implementation of an external authorizer for Istio in Java
+   ](https://blog.dkwr.de/development/ext-authz-java/)
 
 ## Usage
 
