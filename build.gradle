@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'application'
+    id("com.github.johnrengelman.shadow") version "6.0.0"
+}
+
+group 'de.dkwr'
+version '0.0.1-SNAPSHOT'
+
+repositories {
+    maven { // The google mirror is less flaky than mavenCentral()
+        url "https://maven-central.storage-download.googleapis.com/maven2/" }
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    runtimeOnly 'io.grpc:grpc-netty-shaded:1.50.0'
+    implementation 'io.grpc:grpc-protobuf:1.50.0'
+    implementation 'io.grpc:grpc-stub:1.50.0'
+    implementation "io.grpc:grpc-services:1.50.0"
+    implementation 'io.envoyproxy.controlplane:api:0.1.35'
+    compileOnly 'org.apache.tomcat:annotations-api:6.0.53' // necessary for Java 9+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+tasks.jar {
+    mainClassName = "de.dkwr.authzexample.AuthorizationServer"
+    manifest.attributes["Main-Class"] = "de.dkwr.authzexample.AuthorizationServer"
+}
